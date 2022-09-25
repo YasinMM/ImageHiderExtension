@@ -1,5 +1,7 @@
-let replaced = false;
+//let replaced = false;
+document.querySelector("body").dataset.replaced = "0";
 const toggle = ()=>{
+    let replaced = document.querySelector("body").dataset.replaced === "1";
     document.querySelectorAll("img").forEach((value)=>{
         if(!replaced){
             if((value.dataset.src===null || value.dataset.src===undefined  || value.dataset.src==="") && value.complete && value.naturalHeight !==0){
@@ -15,7 +17,11 @@ const toggle = ()=>{
             }
         }
     })
-    replaced = !replaced;
+    if(replaced){
+        document.querySelector("body").dataset.replaced = "0"
+    }else{
+        document.querySelector("body").dataset.replaced = "1"
+    }
 }
 let button = document.createElement("button");
 button.innerHTML = "Toggle";
