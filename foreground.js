@@ -19,12 +19,17 @@ const toggle = ()=>{
     })
     if(replaced){
         document.querySelector("body").dataset.replaced = "0"
+        document.querySelector("#imageHiderBtn").innerHTML = "OFF";
+        document.querySelector("#imageHiderBtn").style.color = "red";
     }else{
         document.querySelector("body").dataset.replaced = "1"
+        document.querySelector("#imageHiderBtn").innerHTML = "ON";
+        document.querySelector("#imageHiderBtn").style.color = "green";
     }
 }
 let button = document.createElement("button");
-button.innerHTML = "Toggle";
+button.innerHTML = "OFF";
+button.style.color = "red";
 button.id="imageHiderBtn";
 button.onclick = toggle;
 document.querySelector("body").appendChild(button);
